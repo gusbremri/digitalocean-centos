@@ -35,3 +35,22 @@
 # vi /etc/sysctl.conf
 // add -> vm.swappiness = 10 , in bottom of file
 // add -> vm.vfs_cache_pressure = 50
+// firewall
+# systemctl start firewalld
+# firewall-cmd --permanent --add-service=ssh
+# firewall-cmd --permanent --add-service=http
+# firewall-cmd --reload
+// get unzip
+# yum install unzip
+// Nginx webserver
+// first the repository then the server
+# yum install epel-release 
+# yum install nginx
+// Start the webserver
+# systemctl start nginx
+// install git
+# yum install git
+// get sonarqube (not as root) 
+# wget https://sonarsource.bintray.com/Distribution/sonarqube/sonarqube-5.1.2.zip
+// get sonar-runner
+# wget http://repo1.maven.org/maven2/org/codehaus/sonar/runner/sonar-runner-dist/2.4/sonar-runner-dist-2.4.zip
