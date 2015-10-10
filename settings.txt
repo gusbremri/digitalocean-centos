@@ -1,0 +1,37 @@
+// Centos settings, Digital Ocean cloud service.
+
+// Install the mariadb database.
+# yum install mariadb
+
+// Install apache
+# yum install httpd
+
+// Install java
+# yum install java
+// Jenkins
+# wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+# rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+# yum install jenkins
+
+// change password for jenkins user
+# passwd jenkins
+
+// create a swap file (https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-centos-7)
+# fallocate -l 4G /swapfile
+# chmod 600 /swapfile
+# mkswap /swapfile
+# swapon /swapfile
+# swapon -s
+
+// Make swap file permanent
+# vi /etc/fstab 
+// paste -> /swapfile   swap    swap    sw  0   0 
+
+
+// Change swappiness
+# sysctl vm.swappiness=10
+
+// also in file
+# vi /etc/sysctl.conf
+// add -> vm.swappiness = 10 , in bottom of file
+// add -> vm.vfs_cache_pressure = 50
