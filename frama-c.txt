@@ -1,0 +1,12 @@
+// Downlaod latest version of frama-c
+// from http://frama-c.com/
+# wget http://frama-c.com/download/frama-c-Sodium-20150201.tar.gz
+// Unpack it
+# tar zxvf frama-c-Sodium-20150201.tar.gz
+// install ocaml and its belongings
+# sudo yum install ocaml
+# ./configure
+# make
+# make install
+
+
